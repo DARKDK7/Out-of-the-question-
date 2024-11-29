@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة بره السالفه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>مرحبًا بك في لعبة بره السالفه</h1>
+
+        <!-- شاشة البداية لإدخال الأسماء -->
+        <div id="start-screen">
+            <h2>اختار اللاعبين</h2>
+            <div id="players-list">
+                <label for="player1">اللاعب 1:</label>
+                <input type="text" id="player1" placeholder="أدخل اسم اللاعب 1">
+                <label for="player2">اللاعب 2:</label>
+                <input type="text" id="player2" placeholder="أدخل اسم اللاعب 2">
+                <!-- يمكنك إضافة لاعبين أكثر باستخدام الزر -->
+                <button onclick="addPlayer()">إضافة لاعب</button>
+            </div>
+            <button onclick="startGame()">ابدأ اللعبة</button>
+        </div>
+
+        <!-- شاشة اللعبة -->
+        <div id="game-screen" style="display:none;">
+            <h2>المرحلة التالية</h2>
+            <div id="current-player"></div>
+            <div id="role"></div>
+            <div id="animal"></div>
+            <button onclick="nextStep()">التالي</button>
+        </div>
+
+        <div id="question-screen" style="display:none;">
+            <h3>الأسئلة</h3>
+            <p id="question"></p>
+            <button onclick="askQuestion()">السؤال التالي</button>
+        </div>
+
+        <div id="vote-screen" style="display:none;">
+            <h3>التصويت</h3>
+            <button onclick="vote(true)">صوت للمشاركة</button>
+            <button onclick="vote(false)">صوت للانسحاب</button>
+        </div>
+
+        <div id="score-board" style="display:none;">
+            <h3>نتائج اللعبة</h3>
+            <p id="score"></p>
+            <button onclick="endGame()">انهاء اللعبة</button>
+            <button onclick="startNewGame()">بدء لعبة جديدة</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
